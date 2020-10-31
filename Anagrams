@@ -1,0 +1,17 @@
+const array = ['code', 'doce', 'ecod', 'framer', 'frame']
+
+function funWithAnagrams( arr ) {
+  let sortedArray = []  
+  let result = arr.reduce( (acc, cur) => {
+    let sortedCur = cur.split('').sort().join('')
+    if ( sortedArray.indexOf(sortedCur) === -1 ) {
+      sortedArray.push(sortedCur)
+      acc.push(cur)
+    } 
+    return acc
+  },[])
+
+  return result.sort();
+}
+
+console.log(funWithAnagrams(array))
